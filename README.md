@@ -24,4 +24,4 @@ ___
 
 
 **Please note**
-*You should also install Python3 to use this project and change the shebang which is the first link in all py file pointing to the location where you have installed Python3*
+*You should also need to install Python3 to use this project and change the shebang which is the first link in all py file pointing to the location where you have installed Python3*
