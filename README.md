@@ -21,3 +21,7 @@ ___
 * Follow along to complete the processing of file
 * The newly generated HTML file with all the information you provided using the form is present in cgi-bin/FS directory as "generated.html" file
 * Open (double click) "generated.html" file to view it.
+
+
+**Please note**
+*You should also install Python3 to use this project and change the shebang which is the first link in all py file pointing to the location where you have installed Python3*
