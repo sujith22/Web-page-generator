@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://bootswatch.com/4/cyborg/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+    @font-face{
+    font-family: 'EB Garamond';
+    src: url("https://fonts.googleapis.com/css?family=Arapey|EB+Garamond|Source+Serif+Pro");
+  }
+  body{
+    font-family: 'EB Garamond';
+    font-size: 20px;
+  }
+    </style>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Jua|Lobster|Stylish|Yeon+Sung');
+    body{
+        font-family: 'Jua', sans-serif;
+        font-size: 25px;
+    }
+    h1,h2,h3,h4{
+        font-family: 'Lobster', cursive;
+    }
+    p{
+        font-family: 'Yeon Sung', cursive;
+        font-size:28px;
+    }
+    .jumbotron p{
+        font-family: 'Jua', sans-serif;
+        font-size: 28px;
+    }
+   footer{
+        font-family: 'Stylish', sans-serif;
+    }
+</style> 
+
+    <title>WebPage Creator</title>
+</head>
+<body>
+    <!-- Jumbtron -->
+    <div class="jumbotron jumbotron-fluid bg-primary">
+        <div class="container">
+          <h1 class="text-center display-2  font-weight-bold" >Webpage creator</h1>
+          <p class="lead text-dark text-justify">This is UI where you can enter the details needed to make a WebPage. The details entered are saved in a text document file which is then processed using a python script into a Web page.</p>
+        </div>
+    </div>
+    <hr class="bg-white">   
+    <!-- Lets start -->
+    <h1 class="display-2 font-weight-bold text-primary text-center">Let's Start</h1>
+    <hr class="bg-white">
+    <!-- Form start -->
+    <div class="container" style="width:60%;">
+            <h1 class="display-3 text-center text-primary">Home Page</h1>
+            <form action="http://localhost/cgi-bin/FS/ui_process.py" method="POST">
+                    <div class="form-group">
+                        <label for="company_name" class = "text-white font-weight-bold">Company Name</label>
+                        <input type="text" class="form-control" name="company_name" placeholder="Enter the company name" autofocus required maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white font-weight-bold">Company Description</label>
+                        <p class="text-muted text-center"><small>Paragraph content should not contain a carriage return</small></p>
+                        <textarea name="home_para_body" cols="30" rows="5" class="form-control" placeholder="Describe company in few lines" required minlength="10" maxlength="250"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="company_name" class = "text-white font-weight-bold">Footer text</label>
+                        <input type="text" class="form-control" name="footer" placeholder="Enter the footer text" required maxlength="50">
+                    </div>
+                    <a href="#about"><input type="button" value="Next" class="btn btn-block btn-primary font-weight-bold"></a>
+    </div>
+    <!--Home Page ends-->
+    <hr class="bg-white">
+    <!-- About -->
+    <div class="container" style="width:60%" id="about">
+        <h1 class="display-3 text-center text-primary" >About Page</h1>
+            <div class="form-group">
+                <label for="" class="text-white font-weight-bold">About Paragraph</label>
+                <p class="text-muted text-center"><small>Paragraph content should not contain a carriage return</small></p>
+                <textarea name="about_para"cols="30" rows="5" class="form-control" placeholder="Enter a pragraph describing what the page is about" required minlength="10" required maxlength="750"></textarea>
+            </div>
+            <a href="#services"><input type="button" value="Next" class="btn btn-block btn-primary font-weight-bold"></a>
+    </div>
+    <!-- About page ends -->
+    <hr class="bg-white">
+    <!-- Services -->
+    <div class="container" style="width:60%" id="services">
+        <h1 class="display-4 text-center text-primary">Services offered by the company</h1>
+        <div class="form-group">
+            <label for="" class="text-white font-weight-bold">Service-1 heading</label>
+            <input type="text" name="service_1" class="form-control" placeholder="Service-1 heading" required maxlength="25">
+            <input type="text" name="service_1_desc" class="form-control" placeholder="Describe the service in a line" required maxlength="250">
+        </div>
+        <div class="form-group">
+                <label for="" class="text-white font-weight-bold">Service-2 heading</label>
+                <input type="text" name="service_2" class="form-control" placeholder="Service-1 heading" required maxlength="25">
+                <input type="text" name="service_2_desc" class="form-control" placeholder="Describe the service in a line" required maxlength="250">
+        </div>
+        <div class="form-group">
+                <label for="" class="text-white font-weight-bold">Service-3 heading</label>
+                <input type="text" name="service_3" class="form-control" placeholder="Service-1 heading" required maxlength="25">
+                <input type="text" name="service_3_desc" class="form-control" placeholder="Describe the service in a line" required maxlength="250">
+        </div>
+        <a href="#contactus"><input type="button" value="Next" class="btn btn-block btn-primary font-weight-bold"></a>
+    </div>
+    <!-- Services ends -->
+    <!-- Contact us page -->
+    <hr class="bg-white">
+    <div class="container" style="width:60%" id="contactus">
+            <h1 class="display-3 text-center text-primary" >Contact us Page</h1>
+                <div class="form-group">
+                    <label class="text-white text-center font-weight-bold">COMPANY ADDRESS</label> <br>
+                    <label class="text-white font-weight-bold">House No. &amp;  Street Name&nbsp; &nbsp;<span class="text-muted text-center"><small>Sepreate it by comma and do not use # for house number</small></span></label>
+                    <input type="text" name="street_name" class="form-control" placeholder="Enter street name" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-white font-weight-bold">City Name</label>
+                    <input type="text" name="city_name" class="form-control" placeholder="Enter city name" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                        <label class="text-white font-weight-bold">State Name</label>
+                        <input type="text" name="state_name" class="form-control" placeholder="Enter state name" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                        <label class="text-white font-weight-bold">Pin Code</label>
+                        <input type="number" name="pin_code" class="form-control" placeholder="Enter pincode" maxlength="10" required>
+                </div>
+                <div class="form-group">
+                    <label class="text-white font-weight-bold">Phone Number (13 digit)</label>
+                    <input type="tel" name="phone" class="form-control" placeholder="Enter phone number"
+                    pattern="^\d{13}$" required>
+                </div>
+                <div class="form-group">
+                        <label class="text-white font-weight-bold">Email Address</label>
+                        <input type="email" name="mail" class="form-control"placeholder="Enter email" required maxlength="50">
+                </div>
+                <a href="#socialmedia"><input type="button" value="Next" class="btn btn-block btn-primary font-weight-bold"></a>
+    </div>
+            <!-- Contact page end -->
+            <!-- Social Media -->
+            <hr class="bg-white">
+            <div class="container" style="width:60%" id="socialmedia">
+                <h1 class="display-3 text-center text-primary" >Social Media Links</h1>
+                <div class="form-group">
+                        <label class="text-white font-weight-bold">Facebook Link</label>
+                        <input type="text" name="facebook_link" class="form-control" placeholder="Enter company facebook's link" maxlength="100">
+                </div>
+                <div class="form-group">
+                        <label class="text-white font-weight-bold">Twitter Link</label>
+                        <input type="text" name="twitter_link" class="form-control"placeholder="Enter company twitter's link"maxlength="100" required>
+                </div>
+                <div class="form-group">
+                        <label class="text-white font-weight-bold">Google+ Link</label>
+                        <input type="text" name="google_link" class="form-control"placeholder="Enter company google+'s link" maxlength="100">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg mx-auto btn-block font-weight-bold">Done</button>
+            </form>
+    </div>
+   <!-- Social media -->
+    <br>
+    <br>
+    <footer>
+            <div class="footer-copyright py-2 text-center bg-primary text-white">
+                <br>
+                <span class="text-white font-weight-bold"> © 2018 Copyright: Made by Sujith &amp; co </span>
+
+            </div>
+
+    </footer>
+</body>
+</html>
