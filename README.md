@@ -20,4 +20,4 @@ ___
 * Open the folder FS from cgi-bin and open/display ui-page1.html
 * Follow along to complete the processing of file
 * The newly generated HTML file with all the information you provided using the form is present in cgi-bin/FS directory as "generated.html" file
-* Open (double click) "generated.html" file to view it.# Web-page-generator
+* Open (double click) "generated.html" file to view it.
